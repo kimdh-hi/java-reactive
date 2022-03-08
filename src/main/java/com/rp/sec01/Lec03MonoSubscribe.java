@@ -1,6 +1,6 @@
 package com.rp.sec01;
 
-import com.rp.util.ConsumerUtil;
+import com.rp.util.SubscribeUtil;
 import reactor.core.publisher.Mono;
 
 public class Lec03MonoSubscribe {
@@ -33,9 +33,9 @@ public class Lec03MonoSubscribe {
 
         // Util 클래스 사용
         mono.subscribe(
-                ConsumerUtil.onNext(),
-                ConsumerUtil.onError(),
-                ConsumerUtil.onComplete()
+                SubscribeUtil.onNext(),
+                SubscribeUtil.onError(),
+                SubscribeUtil.onComplete()
         );
     }
 }

@@ -1,11 +1,10 @@
 package com.rp.sec01;
 
 import com.github.javafaker.Faker;
-import com.rp.util.ConsumerUtil;
+import com.rp.util.SubscribeUtil;
 import reactor.core.publisher.Mono;
 
 import java.util.concurrent.Callable;
-import java.util.function.Supplier;
 
 public class Lec05MonoFromSupplier {
 
@@ -21,15 +20,15 @@ public class Lec05MonoFromSupplier {
         Mono<String> monoSupplier = Mono.fromSupplier(Lec05MonoFromSupplier::getName);
         // 구독할 때 실제 메서드가 호출되는 것을 확인
         monoSupplier.subscribe(
-                ConsumerUtil.onNext(),
-                ConsumerUtil.onError(),
-                ConsumerUtil.onComplete()
+                SubscribeUtil.onNext(),
+                SubscribeUtil.onError(),
+                SubscribeUtil.onComplete()
         );
 
         Callable<String> callable = () -> getName();
         Mono.fromCallable(callable)
                 .subscribe(
-                        ConsumerUtil.onNext()
+                        SubscribeUtil.onNext()
                 );
     }
 

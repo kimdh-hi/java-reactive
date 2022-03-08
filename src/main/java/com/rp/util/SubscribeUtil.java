@@ -2,7 +2,7 @@ package com.rp.util;
 
 import java.util.function.Consumer;
 
-public class ConsumerUtil {
+public class SubscribeUtil {
 
     public static Consumer<Object> onNext() {
         return o -> System.out.println("Received : " + o);

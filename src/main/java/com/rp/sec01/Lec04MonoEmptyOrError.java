@@ -1,6 +1,6 @@
 package com.rp.sec01;
 
-import com.rp.util.ConsumerUtil;
+import com.rp.util.SubscribeUtil;
 import com.rp.util.FakerUtil;
 import reactor.core.publisher.Mono;
 
@@ -10,23 +10,23 @@ public class Lec04MonoEmptyOrError {
 
         userRepository(1)
                 .subscribe(
-                        ConsumerUtil.onNext(),
-                        ConsumerUtil.onError(),
-                        ConsumerUtil.onComplete()
+                        SubscribeUtil.onNext(),
+                        SubscribeUtil.onError(),
+                        SubscribeUtil.onComplete()
                 );
 
         userRepository(2)
                 .subscribe(
-                        ConsumerUtil.onNext(),
-                        ConsumerUtil.onError(),
-                        ConsumerUtil.onComplete()
+                        SubscribeUtil.onNext(),
+                        SubscribeUtil.onError(),
+                        SubscribeUtil.onComplete()
                 );
 
         userRepository(3)
                 .subscribe(
-                        ConsumerUtil.onNext(),
-                        ConsumerUtil.onError(),
-                        ConsumerUtil.onComplete()
+                        SubscribeUtil.onNext(),
+                        SubscribeUtil.onError(),
+                        SubscribeUtil.onComplete()
                 );
     }
 
