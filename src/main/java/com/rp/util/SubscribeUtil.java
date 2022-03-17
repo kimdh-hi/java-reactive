@@ -1,5 +1,7 @@
 package com.rp.util;
 
+import org.reactivestreams.Subscriber;
+
 import java.util.function.Consumer;
 
 public class SubscribeUtil {
@@ -15,4 +17,13 @@ public class SubscribeUtil {
     public static Runnable onComplete() {
         return () -> System.out.println("Completed");
     }
+
+    public static Subscriber<Object> subscriber() {
+        return new DefaultSubscriber();
+    }
+
+    public static Subscriber<Object> subscriber(String name) {
+        return new DefaultSubscriber(name);
+    }
 }
+
